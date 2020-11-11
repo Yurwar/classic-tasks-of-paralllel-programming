@@ -1,6 +1,7 @@
 package com.yurwar;
 
 import com.yurwar.task1.ProducerConsumerTaskController;
+import com.yurwar.task2.ReaderPrioritizedWriterTaskController;
 import com.yurwar.task3.DiningPhilosophersTaskController;
 import com.yurwar.task4.SleepingBarberTaskController;
 
@@ -11,12 +12,18 @@ public class App {
     private static final String PRODUCER_CONSUMER_TASK_NAME = "Producer-Consumer";
     public static final String DINING_PHILOSOPHERS_TASK_NAME = "Dining Philosophers";
     private static final String SLEEPING_BARBER_TASK_NAME = "Sleeping Barber";
+    private static final String READER_WRITER_TASK_NAME = "Reader-Writer";
 
     public static void main(String[] args) {
         System.out.printf(START_TASK_STRING_FORMAT, 1, PRODUCER_CONSUMER_TASK_NAME);
         TaskController task1 = new ProducerConsumerTaskController();
         task1.executeTask();
         System.out.printf(FINISH_TASK_STRING_FORMAT, 1, PRODUCER_CONSUMER_TASK_NAME);
+
+        System.out.printf(START_TASK_STRING_FORMAT, 2, READER_WRITER_TASK_NAME);
+        TaskController task2 = new ReaderPrioritizedWriterTaskController();
+        task2.executeTask();
+        System.out.printf(FINISH_TASK_STRING_FORMAT, 2, READER_WRITER_TASK_NAME);
 
         System.out.printf(START_TASK_STRING_FORMAT, 3, DINING_PHILOSOPHERS_TASK_NAME);
         TaskController task3 = new DiningPhilosophersTaskController();
